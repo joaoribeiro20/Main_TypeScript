@@ -1,3 +1,3 @@
-let valor1: number = 5;
-let nome: string = "20"
-console.log(valor1)
+/* import {Aluno} from "./testeClasseAluno"
+const aluno = new Aluno('joao')
+aluno.exibirNome(7)  */
