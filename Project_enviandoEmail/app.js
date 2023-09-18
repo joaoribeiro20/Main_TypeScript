@@ -2,12 +2,12 @@ const express = require('express');
 const nodemailer = require("nodemailer");
 
 const app = express()
-const port = 3000
+const port = 3001
 
 
 
 app.get('/send', async (req, res) => {
-    let transport = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
         host: "sandbox.smtp.mailtrap.io",
         port: 2525,
         auth: {
@@ -15,14 +15,16 @@ app.get('/send', async (req, res) => {
           pass: "fe9c3dfe9ede6f"
         }
       });
-
-     transporter.sendMail({
+      
+      var men = {
         from: "noreplay@celke.com.br",
-        to: "joao@celke.com.br",
+        to: "jvalves217@gmail.com",
         subject: "teste1",
         text: "ola teste",
-        html: "<h1>Joao</h1>",
-      })
+        html: "<p>Joao</p>",
+      }
+
+     transporter.sendMail(men)
       res.send("enviado")
 })
-app.listen(port, () => console.log("..........."));
+app.listen(port, () => console.log("http://localhost:3001/send"));
