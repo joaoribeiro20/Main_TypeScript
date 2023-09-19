@@ -1,0 +1,43 @@
+body{
+    height: 100vh; 
+    background-image: linear-gradient(120deg,#000000,#850000, #D9D9D9);
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    color: #D9D9D9;
+   
+}
+.caixaLogin{
+    background-color: #d9d9d968;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+}
+.areaInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.areaLogin{
+    background-color: #000000;
+    color: #D9D9D9;
+    border: none;
+}
+.btnLogin{
+    background-color: #000000;
+    color: #D9D9D9;
+    
+}
+.btnLogin:hover{
+    background-color: #000000;
+    color: #D9D9D9;
+    border:#850000 solid 2px;
+}
+.novoCadastroLink{
+    text-decoration: none;
+    color: #D9D9D9;
+}
