@@ -9,9 +9,8 @@ const port = 3001
 
 
 
-app.get('/send', async (req, res) => {
- 
-
+app.get('/index.html', async (req, res) => {
+    res.sendFile(__dirname + "/index.html");
     let transporter = nodemailer.createTransport({
         host: "smtp-mail.outlook.com",	
         port: 587,
@@ -31,7 +30,6 @@ app.get('/send', async (req, res) => {
       }
 
       transporter.sendMail(men)
-      res.send("enviado")
+      
 })
-app.listen(port, () => console.log("http://localhost:3001/send"));
- 
+app.listen(port, () => console.log("http://localhost:3001/index.html"));
