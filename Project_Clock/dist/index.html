@@ -23,14 +23,20 @@
         </section> 
 
         <section>
-            <div class="cronometroSessao">
+            <div id="cronometroSessao" class="cronometroSessao">
                 <div class="divTituloTime"><h2>Cronometro</h2></div>
-                <div class="divExibidor"><p>00 : 00 : 00</p></div>
-                <div class="divValorTime">
-                <div class="divBotoes"></div><button id="BtnIniciar" class="btn">Iniciar</button></div>
+
+                <div id="divExibidor" class="divExibidor">
+                    <span id="cronometroExibir">00 : 00 : 00</span>
+                </div>
+                
+
+                <div id="divBotoes" class="divBotoes">
+                    <button id="BtnIniciarBtnIniciar" class="btn" onclick="iniciarCronometro()">Iniciar</button>
+                </div>
             </div>
         </section>
     </main>
-   
+   <script src="index.js"></script>
 </body>
 </html>
