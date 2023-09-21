@@ -5,14 +5,14 @@ Metodos  adicionar, exibir, editar, excluir
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Adicionar = void 0;
-var Adicionar = /** @class */ (function () {
-    function Adicionar(nome, valor, data, status) {
+class Adicionar {
+    constructor(nome, valor, data, status) {
         this.nome = nome;
         this.valor = valor;
         this.data = data;
         this.status = status;
     }
-    Adicionar.prototype.validarNome = function (nome) {
+    validarNome(nome) {
         this.nome = nome;
         if (nome.length < 2) {
             prompt("nome invalido, numero de caracteris insuficente");
@@ -21,8 +21,8 @@ var Adicionar = /** @class */ (function () {
         else {
             return true;
         }
-    };
-    Adicionar.prototype.validarValor = function (valor) {
+    }
+    validarValor(valor) {
         this.valor = valor;
         if (valor.valueOf === Number) {
             return true;
@@ -31,20 +31,19 @@ var Adicionar = /** @class */ (function () {
             prompt("o valor informado nao conresponde com um numero");
             return false;
         }
-    };
-    Adicionar.prototype.validarData = function (data) {
+    }
+    validarData(data) {
         this.data = data;
-        const regexp1 =/^\d{2}\/\d{2}$/g
-        if (regexp1.test(data)) {
-            console.log("data correta");
+        const regexp = new RegExp('/^\d{2}\/\d{2}$/g');
+        if (regexp.test(data)) {
+            prompt("data Invalida");
         }
         else {
-            console.log("data Invalida");
+            console.log("data correta");
         }
-    };
-    Adicionar.prototype.atualizarValorTotal = function (valorTotal) {
+    }
+    atualizarValorTotal(valorTotal) {
         return this.valor - valorTotal;
-    };
-    return Adicionar;
-}());
+    }
+}
 exports.Adicionar = Adicionar;
