@@ -12,8 +12,9 @@ let horasTimer
 let minutosTimer 
 let segundosTimer
 let tempo
-
+let msg = true
 function iniciarTimer(){
+
 if(valor1.value != '' && valor1.value >= 0){
     horasTimer = valor1.value
 }else{
@@ -24,22 +25,37 @@ if(valor2.value != '' && valor2.value >= 0){
 }else{
     minutosTimer=0
 }
-if(valor3.value != '' && valor3.value >= 0){
+if(valor3.value != '' && valor3.value > 0){
     segundosTimer = valor3.value
+    msg = true
+}else if(valor2.value != '' && valor2.value >= 0){
+    msg = true
+    segundosTimer = 0
 }else{
-    segundosTimer=0
+    segundosTimer = 0
+    msg = false
+    
 }
     
 
+if(msg == false){
+    window.alert('Digite algum valor para iniciar o timer')
+}
+    
 console.log(valor1.value)
 console.log(valor2.value)
 console.log(valor3.value)
+console.log(msg)
 
+
+if(msg != false){
 divTimerPrincipal.removeChild(divExibidorInput)
 divTimerPrincipal.appendChild(divExibiriReal)
 exibir = true
-  tempo = setInterval(() => {
+     tempo = setInterval(() => {
+    if(segundosTimer > 0){
     segundosTimer = segundosTimer-1
+    }
     if(segundosTimer == 0 && minutosTimer > 0){
         segundosTimer = 59
         minutosTimer = minutosTimer - 1
@@ -51,7 +67,9 @@ exibir = true
     
     if(horasTimer == 0 && minutosTimer == 0 && segundosTimer == 0){
     clearTimeout(tempo)
-    timerExibirReal.innerText = `00 : 00 : 00`
+    divTimerPrincipal.appendChild(divExibidorInput)
+    divTimerPrincipal.removeChild(divExibiriReal)
+    valor3.innerText="00"
     exibir = false
     }
     if(exibir){
@@ -61,6 +79,9 @@ exibir = true
     }
     , 1000)
     timerExibirReal.innerText = `${horasTimer} ${minutosTimer} ${segundosTimer}`
+}
+
+ 
 }
 function pausarTimer(){
 
