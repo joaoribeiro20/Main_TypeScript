@@ -73,12 +73,18 @@ exibir = true
     exibir = false
     }
     if(exibir){
-        timerExibirReal.innerText = `${horasTimer} ${minutosTimer} ${segundosTimer}`
+       if(minutosTimer > 9)
+       {
+        timerExibirReal.innerText = `0${horasTimer} : ${minutosTimer} : ${segundosTimer}`
+       }else{
+        timerExibirReal.innerText = `0${horasTimer} : 0${minutosTimer} : ${segundosTimer}`
+       }
+        
     }
     
     }
     , 1000)
-    timerExibirReal.innerText = `${horasTimer} ${minutosTimer} ${segundosTimer}`
+    
 }
 
  
