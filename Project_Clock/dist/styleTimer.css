@@ -15,4 +15,8 @@ align-items: center;
 justify-content: center;
 height: 6vh;
 }
+.TimerValor{
+    width: 5vh;
+    font-size: medium;
+}
 

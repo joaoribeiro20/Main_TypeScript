@@ -26,8 +26,7 @@ body{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 5vh;
-    margin-top: 10vh;
+    
 }
 .btn{
     background-color: #1C1919;
