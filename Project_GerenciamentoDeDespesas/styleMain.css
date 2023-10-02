@@ -1,0 +1,28 @@
+.sessao1{
+    color: white;
+    padding: 5%;
+    width: 70%;
+}
+.areaTransicao{
+    display: flex;
+    justify-content: space-between;
+}
+.statusTransicao{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.trasicaoRealizadas{
+    padding: 2%;
+    background-color: aliceblue;
+    color: black;
+    border: solid green;
+    border-radius: 20px ;
+}
+
+.sessao2{
+    color: white;
+    padding: 5%;
+    width: 30%;
+}

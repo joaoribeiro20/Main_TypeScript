@@ -1,0 +1,23 @@
+.caixaPrincipal{
+    background-color: white;
+    width: 100vh;
+}
+.barraVerde{
+    background-color: #043636;
+    width: 100vh;
+    height: 2vh;
+}
+.cabecarioDiv{
+   padding: 2vh;
+   display: flex;
+}
+.pergunta{
+    background-color: white;
+    margin-top: 2vh;
+    width: 96vh;
+    padding: 2vh;
+    border-radius: 20px;
+}
+.inputPergunta{
+    border: none;
+}

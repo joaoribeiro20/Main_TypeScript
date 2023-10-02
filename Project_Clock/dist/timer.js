@@ -9,11 +9,6 @@ let btnTimerIniciar = document.getElementById('btnTimerIniciar')
 let divBotoesTimer1 = document.getElementById('divBotoesTimer1')
 let divBotoesTimer2 = document.getElementById('divBotoesTimer2')
 let divInput = document.getElementById('divInput')
-/* 
- */
-
-
-
 
 let btnTimerPausar = document.createElement('button')
 btnTimerPausar.setAttribute('class', 'btn')
@@ -32,11 +27,14 @@ btnTimerExcluir.setAttribute('class', 'btn')
 btnTimerExcluir.setAttribute('id', 'btnExcluir')
 btnTimerExcluir.innerText = 'Exclui'
 btnTimerExcluir.addEventListener('click', excluirTimer)
+
 divExibiriReal.removeChild(timerExibirReal)
+
 let horasTimer 
 let minutosTimer 
 let segundosTimer
 let tempo
+let TimerStyle
 let msg = true
 
 function iniciarTimer(){
@@ -70,7 +68,12 @@ console.log(valor1.value)
 console.log(valor2.value)
 console.log(valor3.value)
 console.log(msg)
-
+if(minutosTimer > 9)
+           {
+            timerExibirReal.innerText = `0${horasTimer} : ${minutosTimer} : ${segundosTimer}`
+           }else{
+            timerExibirReal.innerText = `0${horasTimer} : 0${minutosTimer} : ${segundosTimer}`
+           }
 
 if(msg != false){
    
@@ -122,10 +125,10 @@ function excluirTimer(){
      horasTimer = 0
      minutosTimer = 0
      segundosTimer = 0
-     valor2.innerText=''
+     divTimerPrincipal.setAttribute('class', 'timerSessao1')
      divBotoesTimer1.appendChild(btnTimerIniciar)
 }
-function timerClock(){
+function timerClock(){ 
     tempo = setInterval(() => {
         if(segundosTimer > 0){
         segundosTimer = segundosTimer-1
@@ -141,10 +144,27 @@ function timerClock(){
         
         if(horasTimer == 0 && minutosTimer == 0 && segundosTimer == 0){
         clearTimeout(tempo)
-        divExibidorInput.appendChild(divInput)
-        divExibidorInput.removeChild(divExibiriReal)
-        valor3.innerText="00"
-        exibir = false
+        divExibiriReal.removeChild(timerExibirReal)
+
+       divExibidorInput.appendChild(divInput)
+        horasTimer = 0
+        minutosTimer = 0
+        segundosTimer = 0
+
+        divBotoesTimer2.removeChild(btnTimerExcluir)
+        /*  verifica se o conteudo do botão pausa existe na paginaa
+         se existir retorna um valor diferente de null, porem caso nao exista volta null
+         se exitir ele excluir caso nao exista nada ele entao exclui o botão returna porque 
+         so pode existir uma por vez na pagia */
+         console.log(document.getElementById('btnPausar'))
+         if(document.getElementById('btnPausar') != null){
+             divBotoesTimer1.removeChild(btnTimerPausar)
+         }else{
+             divBotoesTimer1.removeChild(btnTimerRetorna)
+         }
+        divBotoesTimer1.appendChild(btnTimerIniciar)
+
+       
         }
         if(exibir){
            if(minutosTimer > 9)
@@ -155,7 +175,23 @@ function timerClock(){
            }
             
         }
+        if(horasTimer == 0 && minutosTimer == 0 && segundosTimer <= 20){
+            testeBorda()
+        
+        }
         
         }
         , 1000)
+}
+function testeBorda(){
+    let teste = segundosTimer%2
+    console.log(teste)
+
+    if(teste == 1){
+        divTimerPrincipal.setAttribute('class', 'timerSessao1Final')
+    }
+     if(teste == 0 ){
+        divTimerPrincipal.setAttribute('class', 'timerSessao1')
+    }
+  
 }
