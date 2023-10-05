@@ -1,0 +1,22 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.tarefas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+   
+}
+.teste{
+    flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 10px;
+}
+
+.todoList{
+    height: 60vh;
+    width: 60vh;
+    
+}
