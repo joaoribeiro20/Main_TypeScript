@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Tperguntas } from "./scriptPerguntas.js"
 let pergunta1 = document.getElementsByName("drone");
 
@@ -73,3 +74,44 @@ function createPergunta() {
 
 
 window.onload = createPergunta()
+=======
+/* import questoes from './scriptPerguntas'; */
+let perguntas = [
+    {
+    questao: 'Quando é 10 + 100?',
+    respostas: [
+        {opcoe: '2', status:false},
+        {opcoe: '33', status:false},
+        {opcoe: '180', status:false},
+        {opcoe: '110', status:true}
+      ]
+    },
+    {
+        questao: 'Quando é 10 + 100?',
+        respostas: [
+            {opcoe: '2', status:false},
+            {opcoe: '33', status:false},
+            {opcoe: '180', status:false},
+            {opcoe: '110', status:true}
+          ]
+        },
+        {
+            questao: 'Quando é 10 + 100?',
+            respostas: [
+                {opcoe: '2', status:false},
+                {opcoe: '33', status:false},
+                {opcoe: '180', status:false},
+                {opcoe: '110', status:true}
+              ]
+            },
+            {
+                questao: 'Quando é 10 + 100?',
+                respostas: [
+                    {opcoe: '2', status:false},
+                    {opcoe: '33', status:false},
+                    {opcoe: '180', status:false},
+                    {opcoe: '110', status:true}
+                  ]
+                }
+]
+>>>>>>> e92599e436014da67ec1dcec970f55035c061ffb
