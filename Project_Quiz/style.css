@@ -5,6 +5,7 @@ body{
 }
 .sessaoPrincipal{
     margin-top: 10vh;
+    margin-bottom: 10VH;
     display: flex;
     justify-content: center;
     align-items: center;
